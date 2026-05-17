@@ -7,233 +7,198 @@
 
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       margin: 0;
-      background: linear-gradient(120deg, #f7f9fc, #eef3f8);
-      color: #2d3436;
-    }
-
-    .dark {
-      background: #1e272e;
-      color: #f1f2f6;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #0b1220, #05070f);
+      color: #e5e7eb;
     }
 
     .container {
-      max-width: 950px;
-      margin: 60px auto;
+      max-width: 1100px;
+      margin: 50px auto;
       padding: 20px;
     }
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      margin-bottom: 25px;
-      transition: transform 0.2s ease;
+    /* HERO (horizontal layout) */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
     }
 
-    .dark .card { background: #2f3640; }
-
-    .card:hover { transform: translateY(-5px); }
-
-    h1 { font-size: 2.5em; margin-bottom: 5px; }
-    h2 { font-weight: 400; color: #636e72; margin-top: 0; }
-
-    .header {
+    .hero-left {
       display: flex;
       align-items: center;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
     .photo {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      background: #dfe6e9;
+      border: 2px solid #38bdf8;
     }
 
-    .tags span {
-      display: inline-block;
-      background: #dfe6e9;
-      padding: 6px 10px;
-      border-radius: 8px;
-      margin: 3px;
-      font-size: 0.85em;
+    h1 {
+      margin: 0;
+      font-size: 2.6em;
     }
 
-    .button {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 8px;
-      background: #0984e3;
-      color: white;
-      cursor: pointer;
-      margin-top: 8px;
-      font-size: 0.85em;
+    h2 {
+      margin: 5px 0 0 0;
+      font-weight: 400;
+      color: #94a3b8;
     }
 
-    .hidden { display: none; margin-top: 10px; }
-
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 12px;
-      margin-top: 15px;
+    .hero-right {
+      color: #94a3b8;
+      max-width: 400px;
+      line-height: 1.5;
     }
 
-    .toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
+    /* GRID LAYOUT (mix horizontal + vertical) */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(148,163,184,0.15);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .placeholder {
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* NAV SIDE FEEL */
+    .side-note {
       font-size: 0.9em;
-      background: #2d3436;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 8px;
+      color: #94a3b8;
     }
 
-    .dark .toggle {
-      background: #f1f2f6;
-      color: #2d3436;
-    }
+    @media(max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
 
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="toggle" onclick="toggleDarkMode()">Toggle mode</div>
-
   <div class="container">
 
-    <div class="card">
-      <div class="header">
-        <img src="square_photo.png" alt="Profile photo" class="photo">
+    <!-- HERO (horizontal) -->
+    <div class="hero">
+
+      <div class="hero-left">
+        <!-- PHOTO PLACEHOLDER -->
+        <img src="square_photo.png" class="photo" alt="profile">
 
         <div>
           <h1>Ekaterina Tomilina</h1>
-          <h2>PhD in Statistics · Data Scientist · Python & R Developer</h2>
+          <h2>Freelance Data Scientist · Statistical Modeling</h2>
         </div>
       </div>
 
-      <div class="tags">
-        <span>Data Science</span>
-        <span>Statistical Modeling</span>
-        <span>Python</span>
-        <span>R</span>
-        <span>Freelance</span>
+      <div class="hero-right">
+        I design statistical models and turn them into usable, interactive tools.
+        <br><br>
+        Focus: inference, simulation, and biological data modeling.
       </div>
+
     </div>
 
-    <div class="card">
-      <h3>About</h3>
-      <p>
-        PhD in Statistics from Université Paris-Saclay, working at the intersection of mathematics and biology.
-        I build statistical models and transform them into practical tools.
-      </p>
-    </div>
+    <!-- MAIN GRID -->
+    <div class="grid">
 
-    <div class="card">
-      <h3>Research & Publications</h3>
+      <!-- LEFT COLUMN (vertical sections) -->
       <div>
-        <b>PhD thesis: Multi-omics regulation network inference via the Gaussian copula</b>
-        <div class="button" onclick="toggleDetails('r1')">Details</div>
-        <div id="r1" class="hidden">
-          My PhD thesis focuses on multi-omics regulation network inference via the Gaussian copula statistical model. 
-          <br><br>
-          <a href="#" target="https://theses.hal.science/tel-05411173">Read thesis</a>
+
+        <div class="card section">
+          <h3>About me</h3>
+          <div class="placeholder">
+            (We will fill this together)
+          </div>
         </div>
-      </div>
 
-      <br>
-
-      <div>
-        <b>Journal Article (Accepted at CSDA)</b>
-        <div class="button" onclick="toggleDetails('r2')">Details</div>
-        <div id="r2" class="hidden">
-          Accepted article presenting methodological contributions in statistical modeling.
-          <br><br>
-          <!-- 🔽 ADD YOUR ARTICLE LINK HERE -->
-          <a href="#" target="_blank">View paper</a>
+        <div class="card section">
+          <h3>Research & Publications</h3>
+          <div class="placeholder">
+            PhD + articles + links (to be completed)
+          </div>
         </div>
-      </div>
 
-      <br>
-
-      <div>
-        <b>Journal Article (Under Revision for BMC Bioinformatics)</b>
-        <div class="button" onclick="toggleDetails('r3')">Details</div>
-        <div id="r3" class="hidden">
-          Ongoing research work currently under peer review.
-          <br><br>
-          <!-- 🔽 ADD YOUR ARTICLE LINK HERE -->
-          <a href="#" target="_blank">Preprint / draft</a>
+        <div class="card section">
+          <h3>CV</h3>
+          <div class="placeholder">
+            Downloadable CV + highlights
+          </div>
         </div>
+
       </div>
 
-      <div class="tags">
-        <span>Latent variable models, copulas</span>
-        <span>Mixed network inference</span>
-        <span>High-dimensionality</span>
-        <span>Application to biological data</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Interactive Project (R Shiny)</h3>
-
-      <p>
-        Interactive Gaussian copula correlation matrix estimation.
-      </p>
-
-      <iframe src="https://shiny-heterocop.sk8.inrae.fr/"></iframe>
-    </div>
-
-    <div class="card">
-      <h3>Projects</h3>
-
+      <!-- RIGHT COLUMN (more visual / interactive) -->
       <div>
-        <b>R Package</b>
-        <div class="button" onclick="toggleDetails('p1')">Details</div>
-        <div id="p1" class="hidden">Statistical methods implementation and package development.</div>
+
+        <div class="card section">
+          <h3>Projects</h3>
+          <div class="placeholder">
+            R package · simulations · apps (to structure)
+          </div>
+        </div>
+
+        <div class="card section">
+          <h3>Freelance Focus</h3>
+          <div class="side-note">
+            Available for data science consulting:
+            <br>• Statistical modeling
+            <br>• Simulation studies
+            <br>• Biological data analysis
+          </div>
+        </div>
+
+        <div class="card section">
+          <h3>Contact</h3>
+          <div class="side-note">
+            LinkedIn + email (unchanged for now)
+          </div>
+        </div>
+
       </div>
 
-      <br>
-
-      <div>
-        <b>Streamlit interactive projects to </b>
-        <div class="button" onclick="toggleDetails('p2')">Details</div>
-        <div id="p2" class="hidden">Monte Carlo experiments and estimator analysis.</div>
-      </div>
-
-      <br>
-
-    </div>
-
-    <div class="card">
-      <h3>Contact</h3>
-      <p>
-        <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/ekaterina-tomilina-292b35200/" target="_blank">Ekaterina Tomilina</a><br>
-        <b>Email:</b> <a href="mailto:etv24077@gmail.com">etv24077@gmail.com</a>
-      </p>
     </div>
 
   </div>
-
-  <script>
-    function toggleDetails(id) {
-      document.getElementById(id).classList.toggle('hidden');
-    }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
 
 </body>
 </html>
