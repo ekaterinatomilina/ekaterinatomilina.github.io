@@ -9,7 +9,6 @@
 
 <div class="nav">
   <a href="index.html">Home</a>
-  <a href="about.html">About</a>
   <a href="projects.html">Projects</a>
   <a href="research.html">Research</a>
   <a href="contact.html">Contact</a>
@@ -20,7 +19,15 @@
   <div class="card full">
     <h3>PhD Thesis</h3>
     <p>
-      Semi-parametric inference of biological networks using Gaussian copula models.
+      The study of multi-omic regulatory networks represents a key challenge in biology. The term multi-omic refers to the different -omic levels of an organism (proteomics, genomics, metabolomics, etc.). 
+      Each level holds a particular role in molecular biology processes, and their interaction is responsible for biological reactions in living organisms. Thus, a better understanding of the underlying mechanisms of these networks could, for instance, contribute to improved insights into diseases such as cancer. 
+      A first major obstacle is the heterogeneity of the data (continuous, discrete, mixed, etc.). Indeed, classical network inference methods are often limited to a single type of data. 
+      A second major obstacle is high dimension, which arises when the number of variables exceeds the number of observations. This raises the issue of variable selection in order to keep only the most important variables in the network.In this thesis, we propose the use of a Gaussian copula model to represent multi-omics data. 
+      This model captures the dependencies between observed variables through a latent Gaussian structure, parameterized by a correlation matrix that naturally encodes a network. The properties of this model, as well as many inference methods for correlation coefficients, are well established in the case of continuous observed variables. We therefore focus primarily on adapting the model to the case where discrete variables are also present.For continuous variables, several methods exist for estimating the copula correlation coefficients. 
+      This task is less straightforward in the presence of discrete variables, as it often requires assumptions on the nature of the marginal distributions. We propose a maximum likelihood estimation method. To avoid high computational costs, we adopt a pairwise likelihood approach. Moreover, by adopting a semi-parametric framework, we remove the need for assumptions on the marginal distributions.We also investigate the independence properties of the model and show that latent correlations encode dependencies between groups of observed variables.
+      Furthermore, we provide an interpretation of the extreme values of correlation coefficients, so far known only in a fully continuous framework, in the presence of binary variables.In a third step, we propose to study the structure of latent conditional correlations, while performing variable selection to address the high-dimensional setting.
+      Thanks to the Gaussian structure, this task consists in inverting the correlation matrix. To achieve this, we apply a penalized inversion method to our pairwise semi-parametric maximum likelihood estimator.Finally, we illustrate our methodology on a bull fertility multi-omic dataset from INRAE via our R package, developed as part of this thesis.
+      <a href="https://theses.hal.science/tel-05411173" > Read full thesis </a>
     </p>
   </div>
 
