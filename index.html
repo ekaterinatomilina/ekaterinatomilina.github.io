@@ -1,212 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ekaterina Tomilina</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #0b1220, #05070f);
-      color: #e5e7eb;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 20px;
-    }
-
-    /* HERO (horizontal layout) */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-bottom: 60px;
-    }
-
-    .hero-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .photo {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #38bdf8;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.6em;
-    }
-
-    h2 {
-      margin: 5px 0 0 0;
-      font-weight: 400;
-      color: #94a3b8;
-    }
-
-    .hero-right {
-      color: #94a3b8;
-      max-width: 400px;
-      line-height: 1.5;
-    }
-
-    /* GRID LAYOUT (mix horizontal + vertical) */
-    .grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 25px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(148,163,184,0.15);
-      border-radius: 16px;
-      padding: 20px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    h3 {
-      margin-top: 0;
-      color: #38bdf8;
-    }
-
-    .section {
-      margin-bottom: 25px;
-    }
-
-    .placeholder {
-      color: #64748b;
-      font-style: italic;
-    }
-
-    /* NAV SIDE FEEL */
-    .side-note {
-      font-size: 0.9em;
-      color: #94a3b8;
-    }
-
-    @media(max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container">
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="research.html">Research</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-    <!-- HERO (horizontal) -->
-    <div class="hero">
+<div class="container">
 
-      <div class="hero-left">
-        <!-- PHOTO PLACEHOLDER -->
-        <img src="square_photo.png" class="photo" alt="profile">
+  <div class="hero">
+    <img src="square_photo.png" class="photo">
 
-        <div>
-          <h1>Ekaterina Tomilina</h1>
-          <h2>Freelance Data Scientist · Statistical Modeling</h2>
-        </div>
-      </div>
+    <div>
+      <h1>Ekaterina Tomilina</h1>
+      <div class="sub">Freelance Data Scientist · Statistical Modeling · PhD</div>
+      <p>
+        I design statistical models and turn them into decision tools for real-world systems.
+      </p>
+    </div>
+  </div>
 
-      <div class="hero-right">
-        I design statistical models and turn them into usable, interactive tools.
-        <br><br>
-        Focus: inference, simulation, and biological data modeling.
-      </div>
+  <div class="grid">
 
+    <div class="card full">
+      <h3>Quick overview</h3>
+      <p>
+        PhD in Mathematics (Paris-Saclay), specializing in copula models,
+        stochastic systems and biological network inference.
+      </p>
     </div>
 
-    <!-- MAIN GRID -->
-    <div class="grid">
+    <!-- HIRE ME SECTION -->
+    <div class="card full hire">
+      <h3>Hire me</h3>
+      <p>
+        I’m available for freelance missions in:
+        statistical modeling, ML for structured data, simulation studies, and data science consulting.
+      </p>
 
-      <!-- LEFT COLUMN (vertical sections) -->
-      <div>
-
-        <div class="card section">
-          <h3>About me</h3>
-          <div class="placeholder">
-            <div>
-            I recently obtained my PhD in Mathematics at the interfaces from Université Paris-Saclay.
-            <br><br>
-            My research focused on the inference of multi-omics regulatory networks using Gaussian copula models, as well as heterogeneous network modeling in a semi-parametric framework with latent variable structures.
-            <br><br>
-            I primarily work with Python and R, developing both methodological and applied statistical tools.
-            <br><br>
-            I previously completed a Master’s degree in Statistical and Stochastic Modeling at Université de Bordeaux in 2022, where I also worked in industry as an apprentice at Lumivero.
-          </div>
-          </div>
-        </div>
-
-        <div class="card section">
-          <h3>Research & Publications</h3>
-          <div class="placeholder">
-            PhD + articles + links (to be completed)
-          </div>
-        </div>
-
-        <div class="card section">
-          <h3>CV</h3>
-          <div class="placeholder">
-            Downloadable CV + highlights
-          </div>
-        </div>
-
-      </div>
-
-      <!-- RIGHT COLUMN (more visual / interactive) -->
-      <div>
-
-        <div class="card section">
-          <h3>Projects</h3>
-          <div class="placeholder">
-            R package · simulations · apps (to structure)
-          </div>
-        </div>
-
-        <div class="card section">
-          <h3>Freelance Focus</h3>
-          <div class="side-note">
-            Available for data science consulting:
-            <br>• Statistical modeling
-            <br>• Simulation studies
-            <br>• Biological data analysis
-          </div>
-        </div>
-
-        <div class="card section">
-          <h3>Contact</h3>
-          <div class="side-note">
-            LinkedIn + email (unchanged for now)
-          </div>
-        </div>
-
-      </div>
-
+      <a class="button" href="contact.html">Contact me</a>
     </div>
 
   </div>
+
+  <div class="footer">
+    © 2026 Ekaterina Tomilina
+  </div>
+
+</div>
 
 </body>
 </html>
